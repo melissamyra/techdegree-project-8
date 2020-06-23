@@ -67,6 +67,7 @@ p {
         margin-right: 15px;
         @include mq(768px) {
             min-height: 80px;
+            min-width: 80px;
         }
     }
     &_email {

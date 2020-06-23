@@ -197,9 +197,14 @@ main {
 }
 
 h2 {
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 600;
   margin: 0 0 5px;
+}
+@media (min-width: 768px) {
+  h2 {
+    font-size: 1rem;
+  }
 }
 
 p {
@@ -253,14 +258,16 @@ p {
   }
 }
 .cards_avatar {
-  max-height: 44px;
+  width: 44px;
+  height: 44px;
   object-fit: cover;
   border-radius: 50%;
   margin-right: 15px;
 }
 @media (min-width: 768px) {
   .cards_avatar {
-    min-height: 100px;
+    min-height: 80px;
+    min-width: 80px;
   }
 }
 .cards_email {
