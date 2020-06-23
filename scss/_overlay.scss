@@ -20,9 +20,11 @@
     border-radius: 2px;
     text-align: left;
     position: relative;
+    transform: scale(.9);
     @include mq(768px) {
         padding: 50px 30px;
         min-width: 300px;
+        transform: scale(1);
     }
     &:hover &_close{
         opacity: 1;
@@ -42,12 +44,16 @@
     }
     &_arrow {
         fill: $bg;
-        width: 45px;
-        height: 60px;
-        opacity: 0;
+        width: 25px;
+        height: 40px;
         transition: opacity .1s;
-        &:hover {
-            opacity: .8;
+        @include mq(768px) {
+            opacity: 0;
+            width: 45px;
+            height: 60px;
+            &:hover {
+                opacity: .8;
+            }
         }
         &.right {
             transform: rotate(180deg);
@@ -55,19 +61,21 @@
     }
     &_button {
         &-left {
-            left: -80px;
+            left: -40px;
+            @include mq(768px) {
+                left: -80px;
+            }
         }
         &-right {
-            right: -80px;
+            right: -40px;
+            @include mq(768px) {
+                right: -80px;
+            }
         }
         &-left, &-right {
             position: absolute;
             top: 150px;
             cursor: pointer;
-            display: none;
-            @include mq(768px) {
-                display: block;
-            }
         }
     }
     &_content {

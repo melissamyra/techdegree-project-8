@@ -315,11 +315,13 @@ p {
   border-radius: 2px;
   text-align: left;
   position: relative;
+  transform: scale(0.9);
 }
 @media (min-width: 768px) {
   .modal {
     padding: 50px 30px;
     min-width: 300px;
+    transform: scale(1);
   }
 }
 .modal:hover .modal_close {
@@ -340,33 +342,43 @@ p {
 }
 .modal_arrow {
   fill: #f8f8f8;
-  width: 45px;
-  height: 60px;
-  opacity: 0;
+  width: 25px;
+  height: 40px;
   transition: opacity 0.1s;
 }
-.modal_arrow:hover {
-  opacity: 0.8;
+@media (min-width: 768px) {
+  .modal_arrow {
+    opacity: 0;
+    width: 45px;
+    height: 60px;
+  }
+  .modal_arrow:hover {
+    opacity: 0.8;
+  }
 }
 .modal_arrow.right {
   transform: rotate(180deg);
 }
 .modal_button-left {
-  left: -80px;
+  left: -40px;
+}
+@media (min-width: 768px) {
+  .modal_button-left {
+    left: -80px;
+  }
 }
 .modal_button-right {
-  right: -80px;
+  right: -40px;
+}
+@media (min-width: 768px) {
+  .modal_button-right {
+    right: -80px;
+  }
 }
 .modal_button-left, .modal_button-right {
   position: absolute;
   top: 150px;
   cursor: pointer;
-  display: none;
-}
-@media (min-width: 768px) {
-  .modal_button-left, .modal_button-right {
-    display: block;
-  }
 }
 .modal_content {
   width: 100%;
