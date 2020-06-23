@@ -60,7 +60,8 @@ p {
         margin: 0;
     }
     &_avatar {
-        max-height: 44px;
+        width: 44px;
+        height: 44px;
         object-fit: cover;
         border-radius: 50%;
         margin-right: 15px;
