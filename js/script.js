@@ -121,7 +121,7 @@ const displayModal = (index) => {
     overlay.classList.remove("hidden");
     modalContainer.innerHTML = modalHTML;
 
-    if (!mqSmall.matches) { // If media query matches
+    // if (!mqSmall.matches) { // If media query matches
         if (parseInt(index) === 0) { 
             hide(buttonLeft); //if showing first employee, hide left arrow
         } else if (parseInt(index) === 11) {
@@ -130,7 +130,7 @@ const displayModal = (index) => {
             show(buttonLeft);
             show(buttonRight);
         }
-    }
+    // }
 
     if (nightMode.checked) { //night mode
         const headings = document.querySelectorAll('h2');
