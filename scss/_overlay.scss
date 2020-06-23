@@ -1,3 +1,6 @@
+/* ====================================================
+                     OVERLAY
+=======================================================*/
 .overlay {
     position: fixed;
     z-index: 100;
@@ -13,7 +16,7 @@
     align-items: center;
 }
 
-.modal {
+.modal { // actual pop-up ----------------------------->
     position: relative;
     background-color: #fff;
     padding: 30px 20px;
@@ -29,7 +32,7 @@
     &:hover &_close{
         opacity: 1;
     }
-    &_close {
+    &_close { // x button
         position: absolute;
         top: 2px;
         right: 5px;
@@ -42,24 +45,19 @@
             width: 100%;
         }
     }
-    &_arrow {
+    &_arrow { // left/right arrow SVG's
         fill: $bg;
         width: 25px;
         height: 40px;
-        transition: opacity .1s;
         @include mq(768px) {
-            opacity: 0;
             width: 45px;
             height: 60px;
-            &:hover {
-                opacity: .8;
-            }
         }
         &.right {
             transform: rotate(180deg);
         }
     }
-    &_button {
+    &_button { // left/right button wrappers
         &-left {
             left: -40px;
             @include mq(768px) {

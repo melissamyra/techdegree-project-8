@@ -18,6 +18,9 @@
     visibility: hidden;
   }
 }
+/* ====================================================
+                     BASE STYLES
+=======================================================*/
 * {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
@@ -34,6 +37,21 @@ body {
   text-align: center;
 }
 
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 0;
+  background: transparent;
+  display: block;
+}
+
+/* ====================================================
+                 HEADER & TOP SECTIONS
+=======================================================*/
 header {
   background: #19a8b3;
   height: 50px;
@@ -59,18 +77,6 @@ header label {
 header label:hover {
   cursor: pointer;
   text-decoration: underline;
-}
-
-a {
-  text-decoration: none;
-}
-
-button {
-  border: none;
-  outline: none;
-  padding: 0;
-  background: transparent;
-  display: block;
 }
 
 #nightMode {
@@ -166,6 +172,9 @@ button {
   }
 }
 
+/* ====================================================
+                          FOOTER
+=======================================================*/
 footer {
   text-align: center;
   margin-top: 50px;
@@ -187,13 +196,13 @@ footer {
   letter-spacing: -0.5px;
 }
 
+/* ====================================================
+                     MAIN DIRECTORY
+=======================================================*/
 main {
   min-height: calc(100vh - 300px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 10px 0;
-  margin-bottom: 30px;
+  margin: 0 auto 30px;
 }
 
 h2 {
@@ -218,6 +227,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
   width: 80%;
 }
 @media (min-width: 768px) {
@@ -233,6 +243,7 @@ p {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
+    max-width: 100%;
   }
 }
 
@@ -266,8 +277,8 @@ p {
 }
 @media (min-width: 768px) {
   .cards_avatar {
-    min-height: 80px;
-    min-width: 80px;
+    min-height: 50px;
+    min-width: 50px;
   }
 }
 .cards_email {
@@ -293,6 +304,9 @@ p {
   }
 }
 
+/* ====================================================
+                     OVERLAY
+=======================================================*/
 .overlay {
   position: fixed;
   z-index: 100;
@@ -344,16 +358,11 @@ p {
   fill: #f8f8f8;
   width: 25px;
   height: 40px;
-  transition: opacity 0.1s;
 }
 @media (min-width: 768px) {
   .modal_arrow {
-    opacity: 0;
     width: 45px;
     height: 60px;
-  }
-  .modal_arrow:hover {
-    opacity: 0.8;
   }
 }
 .modal_arrow.right {

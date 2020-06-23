@@ -1,3 +1,7 @@
+/* ====================================================
+                     BASE STYLES
+=======================================================*/
+
 * {
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
@@ -15,6 +19,22 @@ body {
     text-align: center;
 }
 
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 0;
+    background: transparent;
+    display: block;
+}
+
+/* ====================================================
+                 HEADER & TOP SECTIONS
+=======================================================*/
+// Header and Top Bar ---------------------------------->
 header {
     background: $header;
     height: 50px;
@@ -40,19 +60,6 @@ header {
             text-decoration: underline;
         }
     }
-}
-
-
-a {
-    text-decoration: none;
-}
-
-button {
-    border: none;
-    outline: none;
-    padding: 0;
-    background: transparent;
-    display: block;
 }
 
 #nightMode {
@@ -104,7 +111,7 @@ button {
     }
 }
 
-.button_search {
+.button_search { //search icon in mobile
     top: 20px;
     right: 30px;
     width: 15px;
@@ -118,7 +125,7 @@ button {
     }
 }
 
-#search {
+#search { // search bar
     width: 100%;
     height: 0;
     outline: none;
@@ -145,6 +152,11 @@ button {
         }
     }
 }
+
+/* ====================================================
+                          FOOTER
+=======================================================*/
+// Footer ---------------------------------------------->
 
 footer {
     text-align: center;
