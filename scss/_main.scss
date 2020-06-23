@@ -8,9 +8,12 @@ main {
 }
 
 h2 {
-    font-size: 1rem;
+    font-size: .8rem;
     font-weight: 600;
     margin: 0 0 5px;
+    @include mq(768px) {
+        font-size: 1rem;
+    }
 }
 
 p {
@@ -57,10 +60,13 @@ p {
         margin: 0;
     }
     &_avatar {
-        width: 20%;
+        max-height: 44px;
         object-fit: cover;
         border-radius: 50%;
         margin-right: 15px;
+        @include mq(768px) {
+            min-height: 80px;
+        }
     }
     &_email {
         display: none;

@@ -253,10 +253,15 @@ p {
   }
 }
 .cards_avatar {
-  width: 20%;
+  max-height: 44px;
   object-fit: cover;
   border-radius: 50%;
   margin-right: 15px;
+}
+@media (min-width: 768px) {
+  .cards_avatar {
+    min-height: 100px;
+  }
 }
 .cards_email {
   display: none;
