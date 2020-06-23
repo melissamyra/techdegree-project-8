@@ -6,6 +6,7 @@ const searchButton = document.querySelector(".button_search");
 const searchBar = document.getElementById("search");
 
 //directory
+const main = document.querySelector('main');
 const cardsContainer = document.getElementById("cards-container");
 
 //overlay
@@ -185,9 +186,14 @@ fetch(API)
 searchBar.addEventListener('keyup', () => {
     let userSearch = searchBar.value.toUpperCase();
     let notFound = 0;
-    const notFoundText = "<h2 class='notfound'>Whoops, looks like there's nothing here!</h2>";
     const names = document.querySelectorAll('.cards_name');
-
+    const notFoundText = document.createElement('H1');
+    notFoundText.innerHTML = "<h2 class='notfound'>Whoops, looks like there's nothing here!</h2>";
+    
+    // remove repetition of not found text
+    const whoops = document.querySelectorAll('.notfound');
+    whoops.forEach(whoopsText => whoopsText.remove());
+    
     names.forEach(name => {
         let employeeName = name.textContent.toUpperCase();
         let employeeCard = name.parentNode.parentNode;
@@ -196,6 +202,7 @@ searchBar.addEventListener('keyup', () => {
             employeeCard.style.display = ''; //set back to flex
         } else {
             hide(employeeCard);
+            notFound++;
         }
 
         if (searchBar.value.length === 0) {
@@ -203,6 +210,9 @@ searchBar.addEventListener('keyup', () => {
         }
     });
 
+    if (notFound >= names.length) { //if seach & names don't match
+        main.appendChild(notFoundText);
+    }
 });
 
 // Search Bar & Button interactivity ----------------------->
