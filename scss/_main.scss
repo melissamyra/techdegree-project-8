@@ -27,7 +27,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 80%;
+    width: 80%;
     @include mq(768px) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
