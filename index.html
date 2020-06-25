@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html >
+<html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
         <header>
             <span>Startup.Co</span>
             <input type="checkbox" id="nightMode">
-            <label for="nightMode">Night Mode</span>
+            <label for="nightMode">Night Mode</label>
         </header>
         <div class="top-bar">
             <div class="top-bar-directory">
@@ -80,22 +80,23 @@
             <span id="copyright">&copy; Melissa Myra | 2020</span>
         </footer>
 
+        <!-- Modal arrows SVG -->
+        <svg version="1.1" id="arrow-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+         enable-background="new 0 25.9 516 790.1" xml:space="preserve">
+            <symbol  id="arrow" viewBox="0 25.9 516 790.1">
+                <path d="M488.7,717.7C384.1,615.1,285.3,518.1,184.1,418.8c102.6-99,201.3-194.3,303.3-292.8c0,0-86.4-85.5-88.7-87.5
+                c-123.3,122.6-253.7,252.2-380.1,378C141.9,540,271.8,669.8,404.1,802.3L488.7,717.7z"/>
+            </symbol>
+        </svg>
+
         <div class="overlay hidden">
-            <div class="modal">
-                <a class="modal_button-left">
-                    <svg class="modal_arrow left" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    viewBox="295 368.2 184.7 318.5" enable-background="new 295 368.2 184.7 318.5" xml:space="preserve">
-                        <path d="M298.8,527.5c59.2-52.2,117.5-103.6,177-156.1c-4,19-7.4,36-11,52.9c-6.7,32-13.5,64-20,96.1c-0.9,4.3-0.9,9.7,0,14
-                            c9.6,46.7,19.4,93.2,29.2,139.8c0.5,2.4,0.9,4.9,1.7,9.3C416.2,631,357.8,579.5,298.8,527.5z"/>
-                    </svg>
-                </a>
-                <a class="modal_button-right">
-                    <svg class="modal_arrow right" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    viewBox="295 368.2 184.7 318.5" enable-background="new 295 368.2 184.7 318.5" xml:space="preserve">
-                        <path d="M298.8,527.5c59.2-52.2,117.5-103.6,177-156.1c-4,19-7.4,36-11,52.9c-6.7,32-13.5,64-20,96.1c-0.9,4.3-0.9,9.7,0,14
-                            c9.6,46.7,19.4,93.2,29.2,139.8c0.5,2.4,0.9,4.9,1.7,9.3C416.2,631,357.8,579.5,298.8,527.5z"/>
-                    </svg>
-                </a>
+            <div class="modal">  <!--pointer-events useful for assigning event listener / see SCSS overlay path properties-->
+                    <div class="modal_button-left modal_button"> 
+                        <svg class="modal_arrow-left modal_arrow"><use xlink:href="#arrow"></svg>
+                    </div>
+                    <div class="modal_button-right modal_button">
+                        <svg class="modal_arrow-right modal_arrow"><use xlink:href="#arrow"></svg>
+                    </div>
                 <button class="modal_close">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                     viewBox="0 0 841.9 1190.6" enable-background="new 0 0 841.9 1190.6" xml:space="preserve">
