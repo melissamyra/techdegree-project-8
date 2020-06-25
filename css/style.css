@@ -355,21 +355,23 @@ p {
   width: 100%;
 }
 .modal_arrow {
-  fill: #f8f8f8;
-  width: 25px;
+  pointer-events: all;
+  fill: transparent;
   height: 40px;
+  width: 40px;
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  cursor: pointer;
 }
-@media (min-width: 768px) {
-  .modal_arrow {
-    width: 45px;
-    height: 60px;
-  }
-}
-.modal_arrow.right {
+.modal_arrow-right {
   transform: rotate(180deg);
 }
+.modal_button {
+  position: absolute;
+  top: 45%;
+}
 .modal_button-left {
-  left: -40px;
+  left: -50px;
 }
 @media (min-width: 768px) {
   .modal_button-left {
@@ -377,17 +379,12 @@ p {
   }
 }
 .modal_button-right {
-  right: -40px;
+  right: -50px;
 }
 @media (min-width: 768px) {
   .modal_button-right {
     right: -80px;
   }
-}
-.modal_button-left, .modal_button-right {
-  position: absolute;
-  top: 150px;
-  cursor: pointer;
 }
 .modal_content {
   width: 100%;
@@ -407,7 +404,12 @@ p {
   font-size: 0.8rem;
 }
 
-.hidden {
+#arrow path {
+  pointer-events: none;
+  fill: #f8f8f8;
+}
+
+.hidden, #arrow-svg {
   display: none;
 }
 

@@ -45,35 +45,34 @@
             width: 100%;
         }
     }
-    &_arrow { // left/right arrow SVG's
-        fill: $bg;
-        width: 25px;
+    &_arrow { // left/right arrow SVG
+        pointer-events: all;
+        fill: transparent;
         height: 40px;
+        width: 40px;
+        transform-origin: 50% 50%;
+        transform-box: fill-box;
+        cursor: pointer;
         @include mq(768px) {
-            width: 45px;
-            height: 60px;
         }
-        &.right {
+        &-right {
             transform: rotate(180deg);
         }
     }
-    &_button { // left/right button wrappers
+    &_button { //left-right arrow SVG CONTAINER
+        position: absolute;
+        top: 45%;
         &-left {
-            left: -40px;
+            left: -50px;
             @include mq(768px) {
                 left: -80px;
             }
         }
         &-right {
-            right: -40px;
+            right: -50px;
             @include mq(768px) {
                 right: -80px;
             }
-        }
-        &-left, &-right {
-            position: absolute;
-            top: 150px;
-            cursor: pointer;
         }
     }
     &_content {
@@ -95,6 +94,13 @@
     }
 }
 
-.hidden {
+// <!--pointer-events useful for assigning event listener
+// https://www.smashingmagazine.com/2018/05/svg-interaction-pointer-events-property/--> 
+#arrow path {
+    pointer-events: none;
+    fill: $bg;
+}
+
+.hidden, #arrow-svg {
     display: none;
 }
