@@ -13,10 +13,10 @@ const cardsContainer = document.getElementById("cards-container");
 const overlay = document.querySelector(".overlay");
 const modalClose = document.querySelector(".modal_close");
 const modalContainer = document.querySelector(".modal_content");
-const modalLeftArrow = document.querySelector(".modal_arrow.left path");
-const modalRightArrow = document.querySelector(".modal_arrow.right path");
-const buttonLeft = modalLeftArrow.parentNode.parentNode;
-const buttonRight = modalRightArrow.parentNode.parentNode;
+const modalLeftArrow = document.querySelector(".modal_arrow-left");
+const modalRightArrow = document.querySelector(".modal_arrow-right");
+const buttonLeft = document.querySelector(".modal_button-left");
+const buttonRight = document.querySelector(".modal_button-right");
 
 //nightmode
 const nightMode = document.getElementById("nightMode");
@@ -58,19 +58,23 @@ const setBGColor = (element, color) => element.style.backgroundColor = color;
 
 // handle left and right arrows event
 const handleArrowEvent = e => {
-    const modal = e.target.parentNode.parentNode.parentNode;
-    const currentImg = modal.querySelector('.modal_avatar');
-    const index = parseInt(currentImg.getAttribute('alt'));
-    let next;
     
-    modalContainer.innerHTML = '';
+    if (e.target === modalLeftArrow || e.target === modalRightArrow) {
+        const modal = e.target.parentNode.parentNode;
+        const currentImg = modal.querySelector('.modal_avatar');
+        const index = parseInt(currentImg.getAttribute('alt'));
+        let next;
+        
+        modalContainer.innerHTML = '';
 
-    if (e.target === modalLeftArrow) {
-        next = index - 1; //traverse backwards
-        displayModal(next);
-    } else if (e.target === modalRightArrow) {
-        next = index + 1; //traverse forwards
-        displayModal(next);
+        if (e.target === modalLeftArrow) {
+            next = index - 1; //traverse backwards
+            displayModal(next);
+        } else if (e.target === modalRightArrow) {
+            next = index + 1; //traverse forwards
+            displayModal(next);
+        }
+
     }
 
 }
@@ -124,12 +128,12 @@ const displayModal = (index) => {
 
     // if (!mqSmall.matches) { // If media query matches
         if (parseInt(index) === 0) { 
-            hide(buttonLeft); //if showing first employee, hide left arrow
+            hide(modalLeftArrow); //if showing first employee, hide left arrow
         } else if (parseInt(index) === 11) {
-            hide(buttonRight); //if showing last employee, hide right arrow
+            hide(modalRightArrow); //if showing last employee, hide right arrow
         } else {
-            show(buttonLeft);
-            show(buttonRight);
+            show(modalLeftArrow);
+            show(modalRightArrow);
         }
     // }
 
@@ -248,5 +252,5 @@ modalClose.addEventListener('click', () => {
 });
 
 // Overlay Arrows ------------------------------------------>
-modalLeftArrow.addEventListener('click', handleArrowEvent);
-modalRightArrow.addEventListener('click', handleArrowEvent);
+buttonLeft.addEventListener('click', handleArrowEvent);
+buttonRight.addEventListener('click', handleArrowEvent);
